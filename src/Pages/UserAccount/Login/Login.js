@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import './Login.css'
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -20,11 +21,25 @@ const Login = () => {
 
 
     // ___________________________________________
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const handleResetPassword = async (event) => {
+        await sendPasswordResetEmail(email);
+    }
+
+
+    // ___________________________________________
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     if (user) {
         navigate(from, { replace: true });
+    }
+
+
+    // ___________________________________________
+    let errorElement;
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
 
 
@@ -48,11 +63,12 @@ const Login = () => {
                 <Form onSubmit={handleCreateUser} className='w-75 me-5 pe-5'>
                     <h1 className='mb-4'>Welcome Back!</h1>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" />
+                        <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control onBlur={handlePassword} type="password" placeholder="Password" />
+                        <Form.Control onBlur={handlePassword} type="password" placeholder="Password" required />
                     </Form.Group>
+                    {errorElement}
                     <Button className='w-100' variant="primary" type="submit">
                         Register
                     </Button>
@@ -60,6 +76,7 @@ const Login = () => {
 
                 <div className='w-75 me-5 pe-5'>
                     <p className='mt-3'>Are you new in Study Hacks Corner? <Link to={'/register'}>Please Register</Link></p>
+                    <p className='mt-3'>Forgotten Password? <button onClick={handleResetPassword} className='link-button'>Reset Password</button></p>
 
                     <div className='w-100 d-flex justify-content-center align-items-center'>
                         <div className='login-methord-divided'>

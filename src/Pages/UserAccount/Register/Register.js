@@ -12,6 +12,8 @@ const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [agree, setAgree] = useState(false);
+    console.log(agree)
 
 
     // ___________________________________________
@@ -29,6 +31,11 @@ const Register = () => {
         navigate('/')
     }
 
+    // ___________________________________________
+    let errorElement;
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+    }
 
     // ___________________________________________
     const handleName = event => {
@@ -56,20 +63,25 @@ const Register = () => {
                 <Form onSubmit={handleCreateUser} className='w-75 me-5 pe-5'>
                     <h1 className='mb-4'>Please Register</h1>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control onBlur={handleName} type="text" placeholder="Your name" />
+                        <Form.Control onBlur={handleName} type="text" placeholder="Your name" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" />
+                        <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control onBlur={handlePassword} type="password" placeholder="Password" />
+                        <Form.Control onBlur={handlePassword} type="password" placeholder="Password" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Accept Study Hacks Terms and Conditions" />
+                        <Form.Check onClick={() => setAgree(!agree)} type="checkbox" label="Accept Study Hacks Terms and Conditions" />
                     </Form.Group>
-                    <Button className='w-100' variant="primary" type="submit">
+                    {
+                        errorElement
+                    }
+                    {agree ? <Button className='w-100' variant="primary" type="submit">
                         Register
-                    </Button>
+                    </Button> : <Button className='w-100 disabled' variant="primary" type="submit">
+                        Register
+                    </Button>}
                 </Form>
 
                 <div className='w-75 me-5 pe-5'>
