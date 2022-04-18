@@ -6,6 +6,7 @@ import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import loginImg from '../../../images/log.svg'
 import './Login.css'
 
 const Login = () => {
@@ -62,9 +63,10 @@ const Login = () => {
     }
 
     return (
-        <div className='d-flex flex-row-reverse pt-5'>
+        <div className='d-flex pt-5'>
+            <img className='w-50 img-fluid p-5' src={loginImg} alt="" />
             <div className='w-50 px-5'>
-                <Form onSubmit={handleCreateUser} className='w-75 me-5 pe-5'>
+                <Form onSubmit={handleCreateUser} className='w-75 ms-2 ps-5'>
                     <h1 className='mb-4'>Welcome Back!</h1>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required />
@@ -78,9 +80,9 @@ const Login = () => {
                     </Button>
                 </Form>
 
-                <div className='w-75 me-5 pe-5'>
-                    <p className='mt-3'>Are you new in Study Hacks Corner? <Link to={'/register'}>Please Register</Link></p>
-                    <p className='mt-3'>Forgotten Password? <button onClick={handleResetPassword} className='link-button'>Reset Password</button></p>
+                <div className='w-75 ms-2 ps-5'>
+                    <p className='mt-3 text-center'>New to Study Hacks Corner? <Link to={'/register'}>Please Register</Link></p>
+                    <p className='mt-3 text-center'>Forgotten Password? <button onClick={handleResetPassword} className='link-button'>Reset Password</button></p>
 
                     <div className='w-100 d-flex justify-content-center align-items-center'>
                         <div className='login-methord-divided'>

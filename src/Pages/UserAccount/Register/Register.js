@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import registerImg from '../../../images/register.svg'
 import './Register.css'
 
 const Register = () => {
@@ -64,9 +65,10 @@ const Register = () => {
 
 
     return (
-        <div className='d-flex flex-row-reverse pt-5'>
+        <div className='d-flex pt-5'>
+            <img className='w-50 img-fluid p-5' src={registerImg} alt="" />
             <div className='w-50 px-5'>
-                <Form onSubmit={handleCreateUser} className='w-75 me-5 pe-5'>
+                <Form onSubmit={handleCreateUser} className='w-75 ms-2 ps-5'>
                     <h1 className='mb-4'>Please Register</h1>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control onBlur={handleName} type="text" placeholder="Your name" required />
@@ -90,8 +92,8 @@ const Register = () => {
                     </Button>}
                 </Form>
 
-                <div className='w-75 me-5 pe-5'>
-                    <p className='mt-3 mb-0'>Already have an accout? <Link to={'/login'}>Please Login</Link></p>
+                <div className='w-75 ms-2 ps-5'>
+                    <p className='mt-3 text-center mb-0'>Already have an accout? <Link to={'/login'}>Please Login</Link></p>
 
                     <div className='w-100 d-flex justify-content-center align-items-center'>
                         <div className='login-methord-divided'>

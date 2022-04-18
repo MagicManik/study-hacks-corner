@@ -30,7 +30,7 @@ const SocialLogin = () => {
 
 
     return (
-        <div className='w-75 me-5 pe-5'>
+        <div className='w-75 ms-2 ps-5'>
             <div className='mb-3'>
                 {
                     errorElement
