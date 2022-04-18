@@ -8,7 +8,7 @@ const Banner = () => {
             <div className='banner-container'>
                 <div className='banner-left'>
                     <h1>Study Hacks Corner of Dhaka</h1>
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Proin eget tortor risus. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed</p>
+                    <p className='p-style'>I am dedicated and sincere in my work. I always try to make it easy for students to understand. I also try to understand the psychology of the students. We find out their weak points and treat them accordingly. Above all, I am determined to make my students a better person.</p>
 
                     <div className='w-lg-75 mt-3 d-flex justify-content-between'>
                         <div className='mt-5'>
