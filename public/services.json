@@ -1,0 +1,44 @@
+[
+  {
+    "id": "625d00077714cbcbb9f61609",
+    "index": 0,
+    "picture": "./sub-icon (1).png",
+    "name": "History",
+    "description": "Mauris in aliquam odio, et ornare nisi. Cras tempus dui porttitor scelerisque mattis. Nunc ac condimentum odio, quis tincidunt nulla. ."
+  },
+  {
+    "id": "625d000798552a04f90f6d34",
+    "index": 1,
+    "picture": "./sub-icon (2).png",
+    "name": "Mathematics",
+    "description": "Mauris in aliquam odio, et ornare nisi. Cras tempus dui porttitor scelerisque mattis. Nunc ac condimentum odio, quis tincidunt nulla. ."
+  },
+  {
+    "id": "625d000716bfbbe40be5ebf8",
+    "index": 2,
+    "picture": "./sub-icon (3).png",
+    "name": "Science",
+    "description": "Mauris in aliquam odio, et ornare nisi. Cras tempus dui porttitor scelerisque mattis. Nunc ac condimentum odio, quis tincidunt nulla. ."
+  },
+  {
+    "id": "625d0007567acfab89af30f6",
+    "index": 3,
+    "picture": "./sub-icon (4).png",
+    "name": "Language",
+    "description": "Mauris in aliquam odio, et ornare nisi. Cras tempus dui porttitor scelerisque mattis. Nunc ac condimentum odio, quis tincidunt nulla. ."
+  },
+  {
+    "id": "625d0001313acfab89af30f6",
+    "index": 4,
+    "picture": "./sub-icon (5).png",
+    "name": "Business Studies",
+    "description": "Mauris in aliquam odio, et ornare nisi. Cras tempus dui porttitor scelerisque mattis. Nunc ac condimentum odio, quis tincidunt nulla. ."
+  },
+  {
+    "id": "62597117c91ac5c31b74e1e7",
+    "index": 5,
+    "picture": "./sub-icon (6).png",
+    "name": "Law",
+    "description": "Mauris in aliquam odio, et ornare nisi. Cras tempus dui porttitor scelerisque mattis. Nunc ac condimentum odio, quis tincidunt nulla. ."
+  }
+]

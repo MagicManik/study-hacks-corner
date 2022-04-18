@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import './Register.css'
 
 const Register = () => {
@@ -13,7 +13,6 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [agree, setAgree] = useState(false);
-    console.log(agree)
 
 
     // ___________________________________________
@@ -26,16 +25,23 @@ const Register = () => {
 
 
     // ___________________________________________
+    const [updateProfile, updating] = useUpdateProfile(auth);
+
+
+    // ___________________________________________
     const navigate = useNavigate();
     if (user) {
+        console.log(user)
         navigate('/')
     }
+
 
     // ___________________________________________
     let errorElement;
     if (error) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
+
 
     // ___________________________________________
     const handleName = event => {
@@ -50,10 +56,10 @@ const Register = () => {
 
 
     // ___________________________________________
-    const handleCreateUser = event => {
+    const handleCreateUser = async (event) => {
         event.preventDefault();
-
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
     }
 
 
@@ -85,13 +91,13 @@ const Register = () => {
                 </Form>
 
                 <div className='w-75 me-5 pe-5'>
-                    <p className='mt-3'>Already have an accout? <Link to={'/login'}>Please Login</Link></p>
+                    <p className='mt-3 mb-0'>Already have an accout? <Link to={'/login'}>Please Login</Link></p>
 
                     <div className='w-100 d-flex justify-content-center align-items-center'>
                         <div className='login-methord-divided'>
 
                         </div>
-                        <p className='mt-2 m-2'>or</p>
+                        <p className='mt-2 mb-3'>or</p>
                         <div className='login-methord-divided'>
 
                         </div>

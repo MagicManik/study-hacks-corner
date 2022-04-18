@@ -13,16 +13,19 @@ const Header = () => {
         signOut(auth);
     };
     return (
-        <Navbar className='navbar-style p-1' collapseOnSelect expand="lg" variant="dark">
+        <Navbar sticky='top' className='navbar-style p-2' collapseOnSelect expand="lg" variant="white">
             <Container>
-                <Navbar.Brand className='text-dark fs-5 fw-bold' as={Link} to="/">Study Hacks Corner</Navbar.Brand>
+                <Navbar.Brand className='title-logo fs-4 fw-bold' as={Link} to="/">Study Hacks Corner</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link className='text-dark fs-5 nav-menu' as={Link} to="/services">Services</Nav.Link>
+                        <Nav.Link className='text-dark fs-5' href="/home#services-hash">Services</Nav.Link>
                         <Nav.Link className='text-dark fs-5' as={Link} to="/checkout">Checkout</Nav.Link>
                     </Nav>
                     <Nav>
+                        <Nav.Link className='text-dark fs-5' as={Link} to="/blogs">
+                            Blogs
+                        </Nav.Link>
                         {
                             user ? <button className='bg-transparent text-dark fs-5 border-0' onClick={logout}>Log Out</button> :
                                 <Nav.Link className='text-dark fs-5' as={Link} to="/login">

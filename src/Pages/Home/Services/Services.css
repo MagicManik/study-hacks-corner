@@ -1,0 +1,21 @@
+.services-container {
+    position: relative;
+}
+
+.my-service {
+    position: absolute;
+    top: 79px;
+    left: 0;
+    right: 0;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    grid-gap: 60px;
+    padding: 0px 140px 140px 140px;
+    background-color: #f8f9fa;
+}
