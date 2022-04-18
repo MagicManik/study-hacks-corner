@@ -4,6 +4,8 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Login.css'
 
 const Login = () => {
@@ -22,8 +24,9 @@ const Login = () => {
 
     // ___________________________________________
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-    const handleResetPassword = async (event) => {
+    const handleResetPassword = async () => {
         await sendPasswordResetEmail(email);
+        toast('Sent');
     }
 
 
@@ -54,7 +57,8 @@ const Login = () => {
     // ___________________________________________
     const handleCreateUser = event => {
         event.preventDefault();
-        signInWithEmailAndPassword(email, password)
+        signInWithEmailAndPassword(email, password);
+
     }
 
     return (
@@ -89,6 +93,7 @@ const Login = () => {
                     </div>
                 </div>
                 <SocialLogin></SocialLogin>
+                <ToastContainer />
 
             </div>
         </div>
