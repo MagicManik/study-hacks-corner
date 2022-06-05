@@ -1,0 +1,13 @@
+.about-section p {
+    margin: 30px 120px 50px 120px;
+}
+
+@media screen and (max-width: 576px) {
+    .about-section p {
+        margin: 16px;
+    }
+
+    .about-section h1 {
+        padding-top: 18px !important;
+    }
+}

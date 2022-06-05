@@ -1,5 +1,42 @@
+.register-section {
+    margin-right: 48px;
+}
+
 .login-methord-divided {
     border-bottom: 1px solid #dadce0;
     width: 50%;
     height: 1px;
+}
+
+.register-img {
+    width: 75%;
+}
+
+.register-input {
+    padding: 8px 14px !important;
+    width: 350px !important;
+}
+
+.have-account {
+    text-decoration: none;
+}
+
+.have-account:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 576px) {
+    .register-section {
+        margin-right: 0;
+    }
+
+    .register-img {
+        display: block;
+        margin: 30px auto;
+    }
+
+    .register-input {
+        padding: 8px 14px !important;
+        width: 300px !important;
+    }
 }

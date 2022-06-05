@@ -4,6 +4,7 @@ import github from '../../../images/github.png'
 import auth from '../../../firebase.init';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import './SocialLogin.css'
 
 const SocialLogin = () => {
 
@@ -30,16 +31,19 @@ const SocialLogin = () => {
 
 
     return (
-        <div className='w-75 ms-2 ps-5'>
-            <div className='mb-3'>
+        <div>
+            <div className='mt-3'>
                 {
                     errorElement
                 }
-                <button onClick={() => signInWithGoogle()} className='btn border border-2 border-primary w-100'> <img width={'27px'} className="mx-2" src={google} alt="" /> Google Signin</button>
+                <div className='button-container'>
+                    <button className="social-btn" onClick={() => signInWithGoogle()} > <img width={'27px'} src={google} alt="" /></button>
+
+
+                    <button className="social-btn" onClick={() => signInWithGithub()}> <img width={'27px'} src={github} alt="" /></button>
+                </div>
             </div>
-            <div>
-                <button onClick={() => signInWithGithub()} className='btn border border-2 border-primary w-100'> <img width={'27px'} className="mx-2" src={github} alt="" /> Github Signin</button>
-            </div>
+
         </div>
     );
 };

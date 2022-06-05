@@ -1,27 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+.bg {
+    padding: 25px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-image: url('../../images/img-02.png');
+}
+
 .blog-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 100px;
+    grid-gap: 60px;
     margin: 100px;
+
 }
 
-.mission,
+.mission-container,
+.vission-container {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 2px 18px 0px rgb(12 113 195 / 13%);
+}
+
+.mission {
+    border-top: 1px solid #f9ce6e;
+}
+
 .vission {
-    border: 1px silver solid;
-    padding: 20px;
-    border-radius: 18px;
+    border-top: 1px solid #007aff;
 }
 
-.gradient-text-2 {
-    background: linear-gradient(80deg, #FD7F63, #E85CBA, #A546E9, #923EF2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.mission h4,
+.vission h4 {
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 5px 0 35px 0;
+}
+
+.mission h4 {
+    color: #f9ce6e;
+}
+
+.vission h4 {
+    color: #007aff;
+}
+
+.mission h3,
+.vission h3 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
 }
 
 @media screen and (max-width: 576px) {
+    .bg {
+        padding: 10px;
+    }
+
     .blog-container {
         grid-template-columns: 1fr;
         grid-gap: 16px;
         margin: 16px;
+    }
+
+    .mission-container {
+        margin-bottom: 50px;
     }
 }

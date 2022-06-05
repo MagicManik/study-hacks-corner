@@ -13,13 +13,13 @@ const Header = () => {
         signOut(auth);
     };
     return (
-        <Navbar sticky='top' className='navbar-style p-2' collapseOnSelect expand="lg" variant="white">
+        <Navbar sticky='top' className='navbar-style p-2' collapseOnSelect expand="lg" variant="light">
             <Container>
                 <Navbar.Brand className='title-logo fs-4 fw-bold' as={Link} to="/">Study Hacks Corner</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link className='text-dark fs-5' href="/home#services-hash">Services</Nav.Link>
+                        <Nav.Link className='text-dark fs-5' href="home#hash">Services</Nav.Link>
                         <Nav.Link className='text-dark fs-5' as={Link} to="/checkout">Checkout</Nav.Link>
                     </Nav>
                     <Nav>
@@ -32,9 +32,6 @@ const Header = () => {
                                     Login
                                 </Nav.Link>
                         }
-                        <Nav.Link className='text-dark fs-5' as={Link} to="/register">
-                            Register
-                        </Nav.Link>
                         <Nav.Link className='text-dark fs-5' as={Link} to="/about">
                             About
                         </Nav.Link>

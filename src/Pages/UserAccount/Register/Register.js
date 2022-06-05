@@ -4,19 +4,20 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import registerImg from '../../../images/register.svg'
+import registerImg from '../../../images/register.png'
 import './Register.css'
 
 const Register = () => {
 
-    // ___________________________________________
+    // use state to put input value
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    // use state to check box
     const [agree, setAgree] = useState(false);
 
-
-    // ___________________________________________
+    // using react firebase hooks
     const [
         createUserWithEmailAndPassword,
         user,
@@ -24,27 +25,22 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
-
-    // ___________________________________________
+    // using react firebase hooks
     const [updateProfile, updating] = useUpdateProfile(auth);
 
-
-    // ___________________________________________
+    // navigate after successfully create user account and login
     const navigate = useNavigate();
     if (user) {
-        console.log(user)
         navigate('/')
     }
 
-
-    // ___________________________________________
+    // error handle
     let errorElement;
     if (error) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
 
-
-    // ___________________________________________
+    // get input value then set use state
     const handleName = event => {
         setName(event.target.value);
     }
@@ -55,8 +51,7 @@ const Register = () => {
         setPassword(event.target.value);
     }
 
-
-    // ___________________________________________
+    // event handler of creating user
     const handleCreateUser = async (event) => {
         event.preventDefault();
         await createUserWithEmailAndPassword(email, password);
@@ -65,50 +60,60 @@ const Register = () => {
 
 
     return (
-        <div className='d-flex pt-5'>
-            <img className='w-50 img-fluid p-5' src={registerImg} alt="" />
-            <div className='w-50 px-5'>
-                <Form onSubmit={handleCreateUser} className='w-75 ms-2 ps-5'>
-                    <h1 className='mb-4'>Please Register</h1>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control onBlur={handleName} type="text" placeholder="Your name" required />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control onBlur={handlePassword} type="password" placeholder="Password" required />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check onClick={() => setAgree(!agree)} type="checkbox" label="Accept Study Hacks Terms and Conditions" />
-                    </Form.Group>
-                    {
-                        errorElement
-                    }
-                    {agree ? <Button className='w-100' variant="primary" type="submit">
-                        Register
-                    </Button> : <Button className='w-100 disabled' variant="primary" type="submit">
-                        Register
-                    </Button>}
-                </Form>
+        <section className='register-section'>
+            <div className='login-container'>
 
-                <div className='w-75 ms-2 ps-5'>
-                    <p className='mt-3 text-center mb-0'>Already have an accout? <Link to={'/login'}>Please Login</Link></p>
-
-                    <div className='w-100 d-flex justify-content-center align-items-center'>
-                        <div className='login-methord-divided'>
-
-                        </div>
-                        <p className='mt-2 mb-3'>or</p>
-                        <div className='login-methord-divided'>
-
-                        </div>
-                    </div>
+                <div>
+                    <img className='register-img' src={registerImg} alt="" />
                 </div>
-                <SocialLogin></SocialLogin>
 
+                <div className='form-container'>
+                    <Form onSubmit={handleCreateUser}>
+                        <h3 className='mb-4'>Register</h3>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Control className='rounded-pill register-input' onBlur={handleName} type="text" placeholder="Your name" required />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Control className='rounded-pill register-input' onBlur={handleEmail} type="email" placeholder="Enter email" required />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Control className='rounded-pill register-input' onBlur={handlePassword} type="password" placeholder="Password" required />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                            <Form.Check onClick={() => setAgree(!agree)} type="checkbox" label="I agree to the terms and conditions" />
+                        </Form.Group>
+                        {
+                            errorElement
+                        }
+                        <div>
+                            {agree ? <Button className='rounded-pill register-input' variant="primary" type="submit">
+                                Register
+                            </Button> : <Button className='rounded-pill register-input disabled' variant="primary" type="submit">
+                                Register
+                            </Button>}
+                        </div>
+                    </Form>
+
+                    <div>
+                        <SocialLogin></SocialLogin>
+
+                        <div className='w-100 d-flex justify-content-center align-items-center'>
+                            <div className='login-methord-divided'>
+
+                            </div>
+                            <p className='mx-4'>or</p>
+                            <div className='login-methord-divided'>
+
+                            </div>
+                        </div>
+
+                        <p className='mb-0 text-center'>Already have an account? <Link className='have-account' to={'/login'}>Login</Link></p>
+                    </div>
+
+
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 

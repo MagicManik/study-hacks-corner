@@ -5,7 +5,7 @@
     "picture": "./sub-icon (1).png",
     "name": "History",
     "description": "I love to know and share history. I am regularly connected to BBC CNN and Al Jazeera. As a result, I am able to give accurate information to my students about various recent events.",
-    "perhour": "$180-290"
+    "permonth": "$180-290"
   },
   {
     "id": "625d000798552a04f90f6d34",
@@ -13,7 +13,7 @@
     "picture": "./sub-icon (2).png",
     "name": "Mathematics",
     "description": "I am a graduate teacher interested in subjects like computing and math, and I also studied math and chemistry for my A level.",
-    "perhour": "$200-300"
+    "permonth": "$200-300"
   },
   {
     "id": "625d0007567acfab89af30f6",
@@ -21,7 +21,7 @@
     "picture": "./sub-icon (4).png",
     "name": "Language",
     "description": "I like to debate in English. I try to teach erratic to my students using direct method. Students have less to memorize but can learn English language easily in practice..",
-    "perhour": "$190-260"
+    "permonth": "$190-260"
   },
   {
     "id": "625d000716bfbbe40be5ebf8",
@@ -29,7 +29,7 @@
     "picture": "./sub-icon (3).png",
     "name": "Science",
     "description": "I am a graduate teacher interested in subjects like computing and math, and I also studied math and chemistry for my A level.",
-    "perhour": "$210-300"
+    "permonth": "$210-300"
   },
   {
     "id": "625d0001313acfab89af30f6",
@@ -37,7 +37,7 @@
     "picture": "./sub-icon (5).png",
     "name": "Mathematics",
     "description": "I am a graduate teacher interested in subjects like computing and math, and I also studied math and chemistry for my A level. .",
-    "perhour": "$120-300"
+    "permonth": "$120-300"
   },
   {
     "id": "62597117c91ac5c31b74e1e7",
@@ -45,6 +45,6 @@
     "picture": "./sub-icon (6).png",
     "name": "History",
     "description": "I love to know and share history. I am regularly connected to BBC CNN and Al Jazeera. As a result, I am able to give accurate information to my students about various recent events.",
-    "perhour": "$200-300"
+    "permonth": "$200-300"
   }
 ]
