@@ -4,7 +4,7 @@ const Loading = () => {
     return (
         <div className='d-flex justify-content-center'>
             <div style={{ height: "100px", width: "100px", marginTop: "100px" }} className="spinner-border text-primary" role="status">
-                <span class="visually-hidden"></span>
+                <span className="visually-hidden"></span>
             </div>
         </div>
     );

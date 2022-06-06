@@ -1,0 +1,24 @@
+.fonfirm-container {
+    display: block;
+    margin: 50px auto;
+    width: 500px;
+}
+
+.enroll-form {
+    box-shadow: 0px 2px 18px 0px rgb(12 113 195 / 13%);
+    padding: 50px;
+    border-radius: 18px;
+}
+
+
+@media screen and (max-width: 576px) {
+    .fonfirm-container {
+        display: block;
+        margin: 50px auto;
+        width: 93%;
+    }
+
+    .enroll-form {
+        padding: 20px;
+    }
+}

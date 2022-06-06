@@ -5,23 +5,46 @@
     padding: 30px;
     border-radius: 18px;
     padding: 25px;
-
     background-repeat: no-repeat;
     background-size: auto;
     background-size: initial;
     background-position: right 0px top;
     background-image: url('../../../images/servicebg.png');
-
     background-color: #fff;
     position: relative;
+    display: block;
+    margin: auto;
+
+}
+
+.course-price {
+    /* color: rgb(12, 161, 248); */
+    color: #fff;
+    font-weight: 600;
+    background-color: #1d1d1d;
+    margin-left: 5px;
+    padding: 2px 16px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 18px 0px rgb(12 113 195 / 13%);
 
 }
 
 .service-button-container {
+    display: flex;
+    justify-content: space-between;
     position: absolute;
-    bottom: -6px;
+    bottom: 10px;
+    margin: 0 auto;
     right: 0;
     left: 0;
+    width: 150px;
+    border-radius: 28px;
+    padding: 4px;
+    box-shadow: 0px 0px 0px -10px rgb(25 114 255 / 40%);
+    transition: box-shadow 300ms ease 0ms;
+    background: rgb(12, 161, 248);
+    color: rgb(12, 161, 248);
+    cursor: pointer;
 }
 
 .service img {
@@ -32,20 +55,22 @@
 }
 
 .checkout-btn {
-    display: block;
-    margin: 0 auto;
+    color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    color: #007AFF;
-    box-shadow: 0px 0px 0px -10px rgb(25 114 255 / 40%);
-    transition: box-shadow 300ms ease 0ms;
-    background-color: rgba(0, 122, 255, 0.12);
+    font-size: 16px;
+    padding-left: 10px;
+    background-color: transparent;
 }
 
-.checkout-btn:hover {
-    box-shadow: 0px 10px 40px -10px rgb(25 114 255 / 40%);
-    ;
+.service-icon {
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    color: rgb(12, 161, 248);
+    background-color: rgb(255, 255, 255);
+    padding: 8px;
+    text-align: center;
 }
 
 @media screen and (max-width: 576px) {
