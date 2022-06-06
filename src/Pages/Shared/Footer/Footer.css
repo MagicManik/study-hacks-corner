@@ -38,6 +38,23 @@
     padding-right: 20px;
 }
 
+.social-icon-container {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #2d2c39;
+    font-size: 36px;
+}
+
+.social-icon:hover {
+    color: #29613d;
+}
+
+
+
 @media screen and (max-width: 576px) {
     .footer-section {
         display: grid;

@@ -1,7 +1,7 @@
 import React from 'react';
 import playStore from '../../../images/playstore.png';
 import appStore from '../../../images/appstore.png';
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -13,10 +13,10 @@ const Footer = () => {
                     <h3 className='title-logo'>Hacks Coner</h3>
                     <p>Download Our Mobile App</p>
                     <div className='d-flex'>
-                        <a href="/">
+                        <a href="https://www.linkedin.com/in/manikislammahi/">
                             <img className='app-logo' src={playStore} alt="" />
                         </a>
-                        <a href="/">
+                        <a href="https://www.linkedin.com/in/manikislammahi/">
                             <img className='app-logo ps-2' src={appStore} alt="" />
                         </a>
                     </div>
@@ -25,17 +25,17 @@ const Footer = () => {
                 <div className='company-others'>
                     <div>
                         <h5 className='footer-text pb-2'>Company</h5>
-                        <p className='footer-text'><a href="/">Career</a></p>
-                        <p className='footer-text'><a href="/">Privacy Policy</a></p>
-                        <p className='footer-text'><a href="/">Refund Policy</a></p>
+                        <p className='footer-text'><a href="https://www.linkedin.com/in/manikislammahi/">Career</a></p>
+                        <p className='footer-text'><a href="https://www.linkedin.com/in/manikislammahi/">Privacy Policy</a></p>
+                        <p className='footer-text'><a href="https://www.linkedin.com/in/manikislammahi/">Refund Policy</a></p>
 
                     </div>
 
                     <div className='footer-others'>
                         <h5 className='footer-text pb-2'>Others</h5>
-                        <p className='footer-text'><a href="/">Blogs</a></p>
-                        <p className='footer-text'><a href="/">Crash Course</a></p>
-                        <p className='footer-text'><a href="/">Want to be an affiliate</a></p>
+                        <p className='footer-text'><a href="https://www.linkedin.com/in/manikislammahi/">Blogs</a></p>
+                        <p className='footer-text'><a href="https://www.linkedin.com/in/manikislammahi/">Crash Course</a></p>
+                        <p className='footer-text'><a href="https://www.linkedin.com/in/manikislammahi/">Want to be an affiliate</a></p>
                     </div>
                 </div>
 
@@ -45,10 +45,12 @@ const Footer = () => {
                     <p className='footer-text'>SMS: SHCHelp to 440404 (24X7)</p>
                     <p className='footer-text'>Email: <span className='footer-span'>support@studyhackscorner.com</span></p>
 
-
-
-
-
+                    <div className='social-icon-container'>
+                        <a href="https://www.linkedin.com/in/manikislammahi/"><FaFacebook className='social-icon' /></a>
+                        <a href="https://www.linkedin.com/in/manikislammahi/"><FaInstagram className='social-icon'></FaInstagram></a>
+                        <a href="https://www.linkedin.com/in/manikislammahi/"><FaTwitter className='social-icon'></FaTwitter></a>
+                        <a href="https://www.linkedin.com/in/manikislammahi/"><FaYoutube className='social-icon'></FaYoutube></a>
+                    </div>
 
                 </div>
 
